@@ -1,10 +1,10 @@
 const footerLinks = [
-  { label: "Home", href: "/" },
-  { label: "Become a Member", href: "/membership/aspirant" },
-  { label: "Our Manifesto", href: "/manifesto" },
-  { label: "Ideology", href: "/ideology" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Contact Us", href: "/contacts" },
+  { label: "Home", path: "/" },
+  { label: "Become a Member", path: "/membership/aspirant" },
+  { label: "Our Manifesto", path: "/manifesto" },
+  { label: "Ideology", path: "/ideology" },
+  { label: "Privacy Policy", path: "/privacy" },
+  { label: "Contact Us", path: "/contacts" },
 ];
 
 const MapPinIcon = () => (
@@ -129,8 +129,8 @@ export default function Footer() {
           <ul className="space-y-1">
             {footerLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href}
-                  className="group inline-flex items-center gap-1.5 py-1.5
+                <a href={link.path}
+                  className="group inline-flex items-center gap-1.5 py-1.5 cursor-pointer
                     text-sm text-slate-500 dark:text-slate-400
                     hover:text-blue-600 dark:hover:text-blue-400
                     transition-colors duration-150">
