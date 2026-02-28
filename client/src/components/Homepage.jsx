@@ -63,81 +63,72 @@ export default function Homepage() {
     <div className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300 mt-10">
     <Navbar />
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section
-        className="relative min-h-[92vh] flex items-center overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: `url('https://imgs.search.brave.com/JSu5dfTF4WCfVVgZfgoKNL72MdoPPWbUHmKG1B2DTYs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTg0/MjcyNDUzNy9waG90/by92ZXJvbmljYS13/YW5kaWtpLWhvbGRz/LWEta2VueWFuLWZs/YWctZHVyaW5nLXRo/ZS1jZWxlYnJhdGlv/bnMtb2Yta2VueWFz/LTYwdGgtaW5kZXBl/bmRlbmNlLWRheS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/bjVHTGt5ZEFOQi13/MXBLMlMyYzRxQkp3/V0JhZ1dUMWtXemZl/M1RZVHRrQT0')` }}
+     <section
+  className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-center bg-cover"
+  style={{
+    backgroundImage: `url('https://imgs.search.brave.com/JSu5dfTF4WCfVVgZfgoKNL72MdoPPWbUHmKG1B2DTYs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRpYS5nZXR0eWltYWdlcy5jb20vaWQvMTg0MjcyNDUzNy9waG90by92ZXJvbmljYS13YW5kaWtpLWhvbGRzLWEta2VueWFuLWZsYWctZHVyaW5nLXRoZS1jZWxlYnJhdGlvbnMtb2Yta2VueWFzLTYwdGgtaW5kZXBlbmRlbmNlLWRheS5qcGc_cz02MTJ4NjEyJnc9MCZrPTIwJmM9bjVHTGt5ZEFOQi13MXBLMlMyYzRxQkp3V0JhZ1dUMWtXemZlM1RZVHRrQT0')`,
+  }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
+
+  <Container className="relative z-10 text-center py-24 px-4 sm:px-6 lg:px-8">
+    <h1
+      className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight 
+        transition-all duration-1000 ease-out drop-shadow-lg 
+        ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+      style={{
+        backgroundImage: "linear-gradient(90deg, #3b82f6, #10b981)",
+        WebkitBackgroundClip: "text",
+        color: "transparent",
+      }}
+    >
+      Citizens Alliance <br /> for Democratic Affairs
+    </h1>
+
+    <h3
+      className={`text-lg sm:text-xl md:text-2xl italic text-white/90 mb-10 font-light 
+        transition-all duration-1200 ease-out drop-shadow-md
+        ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+    >
+      Siasa za Maendeleo
+    </h3>
+
+    <div
+      className={`flex flex-wrap justify-center gap-4 transition-all duration-1400 ease-out
+        ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+    >
+      <a
+        href="/membership/aspirant"
+        className="inline-flex items-center gap-2 px-8 py-4 rounded-full
+          text-sm sm:text-base font-bold text-white
+          bg-gradient-to-r from-blue-600 to-emerald-500
+          hover:from-blue-700 hover:to-emerald-600
+          shadow-xl shadow-blue-200 dark:shadow-blue-950
+          transition-all duration-200 active:scale-95"
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/25 dark:bg-black/50"></div>
+        Become a Member
+      </a>
+      <a
+        href="#donate"
+        className="inline-flex items-center gap-2 px-8 py-4 rounded-full
+          text-sm sm:text-base font-bold
+          border border-white/50 dark:border-white/30
+          text-white/90 dark:text-white/80
+          hover:border-blue-300 dark:hover:border-blue-700
+          hover:text-blue-200 dark:hover:text-blue-400
+          transition-all duration-200"
+      >
+        Donate Now
+      </a>
+    </div>
+  </Container>
 
-        {/* Subtle grid texture */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)`,
-            backgroundSize: "48px 48px",
-          }}
-        />
-
-        {/* Right-side accent blob */}
-        <div className="absolute right-0 top-1/4 w-[500px] h-[500px] rounded-full
-          bg-gradient-to-br from-blue-100 to-emerald-50 dark:from-blue-950/40 dark:to-emerald-950/30
-          blur-3xl opacity-60 pointer-events-none translate-x-1/3" />
-
-        <Container className="relative z-10 text-center py-24">
-  {/* Main Title */}
-  <h1
-    className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold 
-      text-white mb-4 leading-tight
-      transition-all duration-1000 ease-out
-      ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
-      drop-shadow-lg`}
-    style={{ backgroundImage: "linear-gradient(90deg, #3b82f6, #10b981)", WebkitBackgroundClip: "text", color: "transparent" }}
-  >
-    Citizens Alliance <br /> for Democratic Affairs
-  </h1>
-
-  {/* Subtitle */}
-  <h3
-    className={`text-lg sm:text-xl md:text-2xl italic text-white/90 mb-10 font-light
-      transition-all duration-1200 ease-out
-      ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}
-      drop-shadow-md`}
-  >
-    Siasa za Maendeleo
-  </h3>
-
-  {/* Buttons */}
-  <div
-    className={`flex flex-wrap justify-center gap-4 transition-all duration-1400 ease-out
-      ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
-  >
-    <a
-      href="/membership/aspirant"
-      className="inline-flex items-center gap-2 px-8 py-4 rounded-full
-        text-sm sm:text-base font-bold text-white
-        bg-gradient-to-r from-blue-600 to-emerald-500
-        hover:from-blue-700 hover:to-emerald-600
-        shadow-xl shadow-blue-200 dark:shadow-blue-950
-        transition-all duration-200 active:scale-95"
-    >
-      Become a Member
-    </a>
-    <a
-      href="#donate"
-      className="inline-flex items-center gap-2 px-8 py-4 rounded-full
-        text-sm sm:text-base font-bold
-        border border-white/50 dark:border-white/30
-        text-white/90 dark:text-white/80
-        hover:border-blue-300 dark:hover:border-blue-700
-        hover:text-blue-200 dark:hover:text-blue-400
-        transition-all duration-200"
-    >
-      Donate Now
-    </a>
-  </div>
-</Container>
-      </section>
+  {/* Right accent blob */}
+  <div className="absolute right-0 top-1/4 w-[500px] h-[500px] rounded-full
+    bg-gradient-to-br from-blue-100 to-emerald-50 dark:from-blue-950/40 dark:to-emerald-950/30
+    blur-3xl opacity-60 pointer-events-none translate-x-1/3" />
+</section>
 
       {/* ══ MISSION ═══════════════════════════════════════════════════════════ */}
       <Section id="mission">
